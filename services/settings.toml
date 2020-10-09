@@ -1,0 +1,10 @@
+debug = 'True'
+user = 'test'
+email = 'test@domain.com'
+password = 'password'
+smtp_host = 'smtp.domain.com'
+smtp_port = 587
+country_code = 'GB'
+sender_id = 'NAMEKO'
+sms_api_token = 'test-token'
+sms_api_url = 'https://messaging.twilio.com/v1/Services'

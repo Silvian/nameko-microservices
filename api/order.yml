@@ -1,0 +1,20 @@
+Micro Service Based Compute and Mail API
+This API is made with Flask, Flasgger and Nameko
+---
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: data
+      properties:
+        order:
+          type: string
+        email:
+          type: string
+        mobile:
+          type: string
+responses:
+  200:
+    description: |
+       Order placed successfullly, you'll receive an email confirmation soon.
