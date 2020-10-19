@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    ports:
+      - "15672:15672"
+
+
+  alerts-services:
+    build: ./services/alerts
+    volumes:
+      - .:/usr/src/services/alerts
+    depends_on:
+      - rabbitmq
+
+
+  orders-services:
+    build: ./services/orders
+    volumes:
+      - .:/usr/src/services/orders
+    depends_on:
+      - rabbitmq
+
+
+  api:
+    build: ./api
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - rabbitmq
+      - alerts-services
+      - orders-services

@@ -3,7 +3,7 @@ from time import sleep
 
 from nameko.rpc import rpc, RpcProxy
 
-from .models import Order, OrderStatus
+from models import Order, OrderStatus
 
 
 class OrderProcessingService:

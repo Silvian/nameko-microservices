@@ -64,6 +64,10 @@ class SMSService:
 
     @rpc
     def send(self, mobile, message):
+        if settings.debug == 'True':
+            print(f'Sending sms to "{mobile}" with message "{message}"')
+            return
+
         response = requests.post(
             url=settings.sms_api_url,
             headers={

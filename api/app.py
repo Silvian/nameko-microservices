@@ -6,7 +6,7 @@ app = Flask(__name__)
 Swagger(app)
 
 # Microservice configs
-CONFIG = {'AMQP_URI': "amqp://guest:guest@localhost"}
+CONFIG = {'AMQP_URI': "amqp://guest:guest@rabbitmq"}
 
 
 @app.route('/order', methods=['POST'])
